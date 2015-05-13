@@ -50,7 +50,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'css/views',
                     src: ['*.scss'],                    
-                    dest: 'css/views',
+                    dest: 'css/build',
                     ext: '.css'
                 }]
             }
@@ -66,13 +66,13 @@ module.exports = function (grunt) {
         },
         concat_css: {
             all: {
-                src: ["css/views/*.css"],
-                dest: "css/app.css"
+                src: ["css/build/*.css"],
+                dest: "css/build/app.css"
             },
         },
         watch: {
             css: {
-                files: 'css/views/*.css',
+                files: 'css/build/*.css',
                 tasks: ['concat_css']
             },
             scss: {
@@ -99,7 +99,7 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'css/app.css': ['css/*.css']
+                    'css/build/app.css': ['css/build/*.css']
                 }
             }
         },
