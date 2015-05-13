@@ -1,32 +1,15 @@
 ﻿/// <vs BeforeBuild='cssmin, default' SolutionOpened='concat, cssmin, imagemin, sass, requirejs' />
 module.exports = function (grunt) {
-    var globalConfig = {
-        appSrc: 'scripts/ak-app',
-        utilidadesSrc: 'scripts/app/utilidades',
-        masterSrc: 'scripts/app/master',
-        viewsSrc: 'Scripts/app/views',
-        vendorsSrc: 'scripts/vendors',
-        pluginsSrc: 'scripts/plugins',
-        routersSrc: 'Scripts/app/routers/router',
-        optimize: 'none'
-    };
-
-    var paths = {
-        jquery: 'node_modules/jquery/dist/jquery',
-        backbone: 'node_modules/backbone/backbone',
-        underscore: 'node_modules/underscore/underscore',
-        app: '<%= globalConfig.appSrc %>',
-        plugins: '<%= globalConfig.pluginsSrc %>',
-        utilidades: '<%= globalConfig.utilidadesSrc %>',
-        master: '<%= globalConfig.masterSrc %>',
-        views: '<%= globalConfig.viewsSrc %>',
-        vendors: '<%= globalConfig.vendorsSrc %>',
-        routers: '<%= globalConfig.routersSrc %>'
-    };
 
     grunt.initConfig({
-        globalConfig: globalConfig,
-        paths: paths,
+        paths: {
+            jquery: 'node_modules/jquery/dist/jquery',
+            backbone: 'node_modules/backbone/backbone',
+            underscore: 'node_modules/underscore/underscore',
+            views: 'scripts/app/views',
+            vendors: 'scripts/vendors',
+            routers: 'scripts/app/routers/router'
+        },
         imagemin: {
             png: {
                 options: {
