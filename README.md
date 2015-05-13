@@ -1,2 +1,3 @@
 # Gruntfile-SPA
-Gruntfile config for SPA project
+SPA project using Backbone + RequireJs + Grunt + Sass
+
