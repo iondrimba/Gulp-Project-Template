@@ -1,7 +1,8 @@
 # Build and Release Folders
-bin/
-bin-debug/
-bin-release/
+GruntfileSPA/.sass-cache
+GruntfileSPA/bin
+GruntfileSPA/node_modules
+GruntfileSPA/obj
 
 # Other files and folders
 .settings/

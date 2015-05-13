@@ -57,6 +57,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="css\views\contact.scss" />
+    <None Include="css\views\home.scss" />
+    <Content Include="main.html" />
+    <Content Include="r.js" />
+    <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,10 +70,23 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="gruntfile.js" />
+    <Content Include="scripts\app\main.js" />
+    <Content Include="scripts\app\routers\router.js" />
+    <Content Include="scripts\app\views\contact.js" />
+    <Content Include="scripts\app\views\home.js" />
+    <Content Include="scripts\vendors\require.js" />
+    <Content Include="scripts\vendors\require.min.js">
+      <DependentUpon>require.js</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+    <Folder Include="scripts\build\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
