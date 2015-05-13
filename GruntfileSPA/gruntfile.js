@@ -65,9 +65,6 @@ module.exports = function (grunt) {
             }
         },
         concat_css: {
-            options: {
-                // Task-specific options go here. 
-            },
             all: {
                 src: ["css/views/*.css"],
                 dest: "css/app.css"
