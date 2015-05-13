@@ -59,9 +59,6 @@
   <ItemGroup>
     <None Include="css\views\contact.scss" />
     <None Include="css\views\home.scss" />
-    <Content Include="css\app.css" />
-    <Content Include="css\views\contact.css" />
-    <Content Include="css\views\home.css" />
     <Content Include="main.html" />
     <Content Include="r.js" />
     <Content Include="package.json" />
@@ -88,6 +85,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="css\build\" />
     <Folder Include="images\" />
     <Folder Include="scripts\build\" />
   </ItemGroup>
