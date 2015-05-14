@@ -1,8 +1,10 @@
 # Build and Release Folders
-GruntfileSPA/.sass-cache
-GruntfileSPA/bin
-GruntfileSPA/node_modules
-GruntfileSPA/obj
+GulpfileSPA/.sass-cache
+GulpfileSPA/bin
+GulpfileSPA/node_modules
+GulpfileSPA/obj
+GulpfileSPA/css/build
+GulpfileSPA/scripts/build
 
 # Other files and folders
 .settings/

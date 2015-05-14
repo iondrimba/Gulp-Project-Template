@@ -1,3 +1,3 @@
-# Gruntfile-SPA
-SPA project using Backbone + RequireJs + Grunt + Sass
+# Gulpfile-SPA
+SPA project using Backbone + RequireJs + Gulp + Sass
 
