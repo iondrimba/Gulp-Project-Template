@@ -57,8 +57,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="css\views\contact.scss" />
-    <None Include="css\views\home.scss" />
+    <None Include="css\views\_contact.scss" />
+    <Content Include="css\app.scss" />
+    <None Include="css\views\_home.scss" />
+    <Content Include="css\vendors\vendors2.css" />
+    <Content Include="css\vendors\vendors1.css" />
     <Content Include="gulpfile.js" />
     <Content Include="main.html" />
     <Content Include="r.js" />
@@ -75,19 +78,16 @@
     <Content Include="scripts\app\routers\router.js" />
     <Content Include="scripts\app\views\contact.js" />
     <Content Include="scripts\app\views\home.js" />
-    <Content Include="scripts\vendors\require.js" />
-    <Content Include="scripts\vendors\require.min.js">
-      <DependentUpon>require.js</DependentUpon>
-    </Content>
+    <Content Include="scripts\require.min.js" />
+    <Content Include="scripts\vendors\vendors2.js" />
+    <Content Include="scripts\vendors\vendors1.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\build\" />
     <Folder Include="images\" />
-    <Folder Include="scripts\build\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

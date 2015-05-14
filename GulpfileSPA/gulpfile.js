@@ -5,6 +5,7 @@ var cssmin = require('gulp-cssmin');
 var sass = require('gulp-sass');
 var requirejsOptimize = require('gulp-requirejs-optimize');
 var concatCss = require('gulp-concat-css');
+var watch = require('gulp-watch');
 var globalConfig = {
     optimize: ''
 };
@@ -52,6 +53,7 @@ gulp.task('minifyjs', function () {
       .pipe(gulp.dest('Scripts/build'));
 });
 
+
 gulp.task('requirejs', function () {
     return gulp.src('Scripts/app/main.js')
         .pipe(requirejsOptimize(function (file) {
@@ -68,6 +70,11 @@ gulp.task('requirejs', function () {
             };
         }))
         .pipe(gulp.dest('./'));
+});
+
+gulp.task('watch', ['dev'], function () {
+    gulp.watch('./css/**/*.{sass,scss}', ['sass']);
+    gulp.watch('./scripts/**/*.js', ['scripts']);
 });
 
 gulp.task('requiresjs-dev', function () {
