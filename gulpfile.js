@@ -24,83 +24,33 @@ var paths = {
     scripts: ['src/scripts/**/.js', 'src/scripts/**/**/.js']
 };
 
-gulp.task('sass', function () {
-    gulp.src('./src/css/app.scss')
-      .pipe(sass.sync().on('error', sass.logError))
-      .pipe(gulp.dest('./build/css/'));
-});
+gulp.task('sass', require('./tasks/sass.js'));
 
-gulp.task('concat_css', function () {
-    return gulp.src('./src/css/vendors/*.css')
-      .pipe(concatCss("./build/css/vendors.css"))
-      .pipe(gulp.dest('./'));
-});
+gulp.task('concat_css', require('./tasks/concat_css.js'));
 
-gulp.task('cssmin', function () {
-    gulp.src('build/css/*.css')
-        .pipe(cssmin())
-        .pipe(gulp.dest('./build/css'));
-});
+gulp.task('cssmin', require('./tasks/cssmin.js'));
 
-gulp.task('scripts', function () {
-    return gulp.src(['src/scripts/vendors/vendors1.js', 'src/scripts/vendors/vendors2.js'])
-        .pipe(concat('vendors.js'))
-        .pipe(gulp.dest('build/scripts'));
-});
+gulp.task('scripts', require('./tasks/scripts.js'));
 
-gulp.task('minifyjs', function () {
-    return gulp.src('build/scripts/*.js')
-      .pipe(uglify())
-      .pipe(gulp.dest('build/scripts'));
-});
+gulp.task('minifyjs', require('./tasks/minifyjs.js'));
+
+gulp.task('requirejs', require('./tasks/requirejs.js'));
+
+gulp.task('watch', ['dev'], require('./tasks/watch.js'));
+
+gulp.task('webserver', require('./tasks/webserver.js'));
 
 
-gulp.task('requirejs', function () {
-    return gulp.src('src/scripts/app/main.js')
-        .pipe(requirejsOptimize(function (file) {
-            return {
-                name: 'src/scripts/app/main',
-                out: 'build/scripts/app.js',
-                baseUrl: '',
-                optimizeAllPluginResources: true,
-                noGlobal: true,
-                optimize: globalConfig.optimize,
-                mainConfigFile: 'src/scripts/app/main.js',
-                allowSourceOverwrites: false,
-                paths: requirePaths
-            };
-        }))
-        .pipe(gulp.dest('./'));
-});
-
-gulp.task('watch', ['dev'], function () {
-    gulp.watch('./src/css/**/*.{sass,scss}', ['sass']);
-    gulp.watch('./src/scripts/**/*.js', ['scripts']);
-});
-
-gulp.task('webserver', function() {
-    gulp.src('./build' )
-        .pipe(webserver({
-            livereload: true,
-            directoryListing: false,
-            open: true
-        }));
-});
-
-gulp.task('requiresjs-dev', function () {
+gulp.task('requiresjs-dev', function() {
     globalConfig.optimize = 'none';
     return gulp.start('requirejs');
 });
 
-gulp.task('requiresjs-prod', function () {
+gulp.task('requiresjs-prod', function() {
     globalConfig.optimize = 'uglify';
     return gulp.start('requirejs');
 });
 
-gulp.task('dev', ['sass', 'concat_css', 'scripts', 'requiresjs-dev', 'webserver', 'watch'], function () {
-});
+gulp.task('dev', ['sass', 'concat_css', 'scripts', 'requiresjs-dev', 'webserver', 'watch'], function() {});
 
-gulp.task('prod', ['sass', 'concat_css', 'cssmin', 'scripts', 'minifyjs', 'requiresjs-prod'], function () {
-});
-
-
+gulp.task('prod', ['sass', 'concat_css', 'cssmin', 'scripts', 'minifyjs', 'requiresjs-prod'], function() {});
