@@ -15,7 +15,7 @@ var paths = {
 
 
 module.exports = function() {
-    return gulp.src('src/scripts/app/main.js')
+    gulp.src('src/scripts/app/main.js')
         .pipe(requirejsOptimize(function(file) {
             return {
                 name: 'src/scripts/app/main',
@@ -23,7 +23,7 @@ module.exports = function() {
                 baseUrl: '',
                 optimizeAllPluginResources: true,
                 noGlobal: true,
-                optimize: globalConfig.optimize,
+                optimize: 'uglify',
                 mainConfigFile: 'src/scripts/app/main.js',
                 allowSourceOverwrites: false,
                 paths: requirePaths
