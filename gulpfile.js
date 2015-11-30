@@ -5,6 +5,7 @@ var cssmin = require('gulp-cssmin');
 var sass = require('gulp-sass');
 var requirejsOptimize = require('gulp-requirejs-optimize');
 var concatCss = require('gulp-concat-css');
+var webserver = require('gulp-webserver');
 var watch = require('gulp-watch');
 var globalConfig = {
     optimize: ''
@@ -14,57 +15,57 @@ var requirePaths = {
     jquery: 'node_modules/jquery/dist/jquery',
     backbone: 'node_modules/backbone/backbone',
     underscore: 'node_modules/underscore/underscore',
-    views: 'scripts/app/views',
-    vendors: 'scripts/vendors',
-    routers: 'scripts/app/routers/router'
+    views: 'src/scripts/app/views',
+    vendors: 'src/scripts/vendors',
+    routers: 'src/scripts/app/routers/router'
 };
 
 var paths = {
-    scripts: ['Scripts/**/.js', 'Scripts/**/**/.js']
+    scripts: ['src/scripts/**/.js', 'src/scripts/**/**/.js']
 };
 
 gulp.task('sass', function () {
-    gulp.src('./css/app.scss')
+    gulp.src('./src/css/app.scss')
       .pipe(sass.sync().on('error', sass.logError))
-      .pipe(gulp.dest('./css/build'));
+      .pipe(gulp.dest('./build/css/'));
 });
 
 gulp.task('concat_css', function () {
-    return gulp.src('./css/vendors/*.css')
-      .pipe(concatCss("./css/build/vendors.css"))
+    return gulp.src('./src/css/vendors/*.css')
+      .pipe(concatCss("./build/css/vendors.css"))
       .pipe(gulp.dest('./'));
 });
 
 gulp.task('cssmin', function () {
-    gulp.src('css/build/*.css')
+    gulp.src('build/css/*.css')
         .pipe(cssmin())
-        .pipe(gulp.dest('./css/build'));
+        .pipe(gulp.dest('./build/css'));
 });
 
 gulp.task('scripts', function () {
-    return gulp.src(['scripts/vendors/vendors1.js', 'scripts/vendors/vendors2.js'])
+    return gulp.src(['src/scripts/vendors/vendors1.js', 'src/scripts/vendors/vendors2.js'])
         .pipe(concat('vendors.js'))
-        .pipe(gulp.dest('scripts/build'));
+        .pipe(gulp.dest('build/scripts'));
 });
 
 gulp.task('minifyjs', function () {
-    return gulp.src('Scripts/build/*.js')
+    return gulp.src('build/scripts/*.js')
       .pipe(uglify())
-      .pipe(gulp.dest('Scripts/build'));
+      .pipe(gulp.dest('build/scripts'));
 });
 
 
 gulp.task('requirejs', function () {
-    return gulp.src('Scripts/app/main.js')
+    return gulp.src('src/scripts/app/main.js')
         .pipe(requirejsOptimize(function (file) {
             return {
-                name: 'Scripts/app/main',
-                out: 'Scripts/build/app.js',
+                name: 'src/scripts/app/main',
+                out: 'build/scripts/app.js',
                 baseUrl: '',
                 optimizeAllPluginResources: true,
                 noGlobal: true,
                 optimize: globalConfig.optimize,
-                mainConfigFile: 'Scripts/app/main.js',
+                mainConfigFile: 'src/scripts/app/main.js',
                 allowSourceOverwrites: false,
                 paths: requirePaths
             };
@@ -73,22 +74,33 @@ gulp.task('requirejs', function () {
 });
 
 gulp.task('watch', ['dev'], function () {
-    gulp.watch('./css/**/*.{sass,scss}', ['sass']);
-    gulp.watch('./scripts/**/*.js', ['scripts']);
+    gulp.watch('./src/css/**/*.{sass,scss}', ['sass']);
+    gulp.watch('./src/scripts/**/*.js', ['scripts']);
+});
+
+gulp.task('webserver', function() {
+    gulp.src('./build' )
+        .pipe(webserver({
+            livereload: true,
+            directoryListing: false,
+            open: true
+        }));
 });
 
 gulp.task('requiresjs-dev', function () {
     globalConfig.optimize = 'none';
-    return gulp.run('requirejs');
+    return gulp.start('requirejs');
 });
 
 gulp.task('requiresjs-prod', function () {
     globalConfig.optimize = 'uglify';
-    return gulp.run('requirejs');
+    return gulp.start('requirejs');
 });
 
-gulp.task('dev', ['sass', 'concat_css', 'scripts', 'requiresjs-dev'], function () {
+gulp.task('dev', ['sass', 'concat_css', 'scripts', 'requiresjs-dev', 'webserver', 'watch'], function () {
 });
 
 gulp.task('prod', ['sass', 'concat_css', 'cssmin', 'scripts', 'minifyjs', 'requiresjs-prod'], function () {
 });
+
+
