@@ -12,10 +12,12 @@ gulp.task('minifyjs', require('./tasks/minifyjs.js'));
 
 gulp.task('requirejs', require('./tasks/requirejs.js'));
 
-gulp.task('watch', ['dev'], require('./tasks/watch.js'));
+gulp.task('watch', require('./tasks/watch.js'));
 
-gulp.task('webserver', require('./tasks/webserver.js'));
+gulp.task('browser-sync', require('./tasks/browser-sync.js'));
 
-gulp.task('default', ['sass', 'concat_css', 'scripts', 'requirejs', 'webserver'], function() {});
+gulp.task('copy', require('./tasks/copy.js'));
 
-gulp.task('prod', ['sass', 'concat_css', 'cssmin', 'scripts', 'minifyjs', 'requirejs'], function() {});
+gulp.task('default', ['sass', 'concat_css', 'scripts', 'requirejs', 'copy', 'browser-sync', 'watch']);
+
+gulp.task('prod', ['sass', 'concat_css', 'cssmin', 'scripts', 'minifyjs', 'requirejs', 'copy']);

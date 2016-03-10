@@ -1,22 +1,14 @@
-﻿window.EventAggregator = _.extend({}, Backbone.Events);
-
-define([], function () {
+﻿define([], function() {
     var Router = Backbone.Router.extend({
-        routes: {
-            "*route":"defaultAction",
-            "Home": "Home",
-            "Contact": "Contact"
+        initialize: function(options) {
         },
-        defaultAction: function (route) {            
-            if (route === null) {
-                route = 'Home';
-            }
-            EventAggregator.trigger("render:route", route);
+        routes: {
+            ":page": "site",
+        },
+        site: function(route) {
+            console.log('site', route);
         }
     });
-    
+
     return Router;
 });
-
-// Set the app namespace instancing the router
-// Start the Backbone push navigation

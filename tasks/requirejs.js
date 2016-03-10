@@ -19,7 +19,7 @@ module.exports = function() {
         .pipe(requirejsOptimize(function(file) {
             return {
                 name: 'src/scripts/app/main',
-                out: 'build/scripts/app.js',
+                out: 'public/scripts/app.js',
                 baseUrl: '',
                 optimizeAllPluginResources: true,
                 noGlobal: true,

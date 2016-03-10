@@ -1,18 +1,17 @@
-﻿define(['backbone'], function (Backbone) {
+﻿define(['backbone'], function(Backbone) {
     var Contact = Backbone.View.extend({
         el: '.contact',
-        initialize: function () {            
+        initialize: function() {
             this.render();
         },
-        render: function () {
-            console.log('Contact');
+        render: function() {
             return this;
         },
-        dispose: function () {
+        dispose: function() {
             this.undelegateEvents();
             $(this.el).removeData().unbind();
-        },        
-        events: {          
+        },
+        events: {
         }
     });
 

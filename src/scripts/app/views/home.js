@@ -1,14 +1,13 @@
-﻿define(['backbone'], function (Backbone) {
+﻿define(['backbone'], function(Backbone) {
     var Home = Backbone.View.extend({
         el: '.home',
-        initialize: function () {            
+        initialize: function() {
             this.render();
         },
-        render: function () {
-            console.log('Home');
+        render: function() {
             return this;
         },
-        dispose: function () {
+        dispose: function() {
             this.undelegateEvents();
             $(this.el).removeData().unbind();
         },
