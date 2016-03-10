@@ -1,4 +1,4 @@
-#Gulp Project Template
+#Gulp Project Template /  Backbone + RequireJs 
 
 [![Travis build status](https://travis-ci.org/iondrimba/Gulp-Project-Template.svg?branch=master)](https://travis-ci.org/iondrimba/Gulp-Project-Template)
 
