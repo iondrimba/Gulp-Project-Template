@@ -58,4 +58,4 @@
 └── README.md
 ````
 
-[Live demo]:<http://iondrimba.github.io/ES6StarterProject/>
+[Live demo]:<http://iondrimba.github.io/Gulp-Project-Template/>
