@@ -1,6 +1,6 @@
 #Gulp Project Template /  Backbone + RequireJs 
 
-[![Travis build status](https://travis-ci.org/iondrimba/Gulp-Project-Template.svg?branch=master)](https://travis-ci.org/iondrimba/Gulp-Project-Template)
+[![Travis build status](https://travis-ci.org/iondrimba/gulp-project-template.svg?branch=master)](https://travis-ci.org/iondrimba/gulp-project-template)
 
 ### GOAL:
 
@@ -14,7 +14,7 @@ Provide a quick ready to play project using Backbone and RequireJs
 ## Installation
 
 ```sh
- git clone https://github.com/iondrimba/Gulp-Project-Template.git 
+ git clone https://github.com/iondrimba/gulp-project-template.git 
  cd Gulp-Project-Template
  npm install
  gulp
@@ -69,4 +69,4 @@ r.js
 README.md
 ````
 
-[Live demo]:<http://iondrimba.github.io/Gulp-Project-Template/>
+[Live demo]:<http://iondrimba.github.io/gulp-project-template/>
