@@ -40,23 +40,21 @@
 
 ````bash
 
-public/
-
-    css/
-    scripts/
+-public/
+    -css/
+    -scripts/
     index.html
 
-src/
-    scripts/
-		app/
-		vendors/
+-src/
+    -scripts/
+		-app/
+		-vendors/
 		require.js
-    scss/
-		vendors/
-		views/
+    -scss/
+		-vendors/
+		-views/
 		app.scss
-tasks/
-
+-tasks/
 .gitignore
 .travis.yml
 gulpfile.js
