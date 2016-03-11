@@ -2,6 +2,10 @@
 
 [![Travis build status](https://travis-ci.org/iondrimba/Gulp-Project-Template.svg?branch=master)](https://travis-ci.org/iondrimba/Gulp-Project-Template)
 
+## GOAL:
+
+Provide a quick ready to play project using Backbone and RequireJs
+
 #### Requires:
 
 * NodeJs
