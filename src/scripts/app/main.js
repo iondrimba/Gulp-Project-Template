@@ -7,7 +7,6 @@
     var contact = new Contact();
     var router = new Router();
 
-
     router.on('route:site', function(route) {
         $('div').hide();
         $('.' + route).show();

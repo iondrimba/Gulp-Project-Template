@@ -2,7 +2,7 @@
 
 [![Travis build status](https://travis-ci.org/iondrimba/Gulp-Project-Template.svg?branch=master)](https://travis-ci.org/iondrimba/Gulp-Project-Template)
 
-####Requires:
+#### Requires:
 
 * NodeJs
 * Gulp
@@ -18,7 +18,7 @@
 
 ###[Live demo]
 
-####Includes:
+#### Includes:
 
 * BrowserSync
 * Backbone
@@ -31,12 +31,12 @@
 * Concat Vendors css/js files
 * Css-Min
 
-####Gulp Tasks:
+#### Gulp Tasks:
 
 * gulp (default)
 * gulp prod (production)
 
-####Structure:
+#### Structure:
 
 ````bash
 ├── public/
@@ -45,14 +45,22 @@
 │    └─── index.html
 │
 │── src/
-│    ├── scss/
-│    └── scripts/
+│    ├── scripts/
+│	 │   ├─── app/
+│	 │   ├─── vendors/
+│	 │   └─── require.js
+│    └─── scss/
+│	    ├─── vendors/
+│	    ├─── views/
+│	    └─── app.scss
 │
 │── tasks/
 │
 │── .gitignore
 │── .travis.yml
 │── gulpfile.js
+│── index.html
+│── LICENSE
 │── package.json
 │── r.js
 └── README.md
