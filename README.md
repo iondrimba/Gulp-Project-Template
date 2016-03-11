@@ -39,31 +39,32 @@
 #### Structure:
 
 ````bash
-├── public/
-│    ├─── css/
-│    ├─── scripts/
-│    └─── index.html
-│
-│── src/
-│    ├── scripts/
-│	  │   ├─── app/
-│	  │   ├─── vendors/
-│	  │   └─── require.js
-│     └─── scss/
-│	    ├─── vendors/
-│	    ├─── views/
-│	    └─── app.scss
-│
-│── tasks/
-│
-│── .gitignore
-│── .travis.yml
-│── gulpfile.js
-│── index.html
-│── LICENSE
-│── package.json
-│── r.js
-└── README.md
+
+public/
+
+    css/
+    scripts/
+    index.html
+
+src/
+    scripts/
+		app/
+		vendors/
+		require.js
+    scss/
+		vendors/
+		views/
+		app.scss
+tasks/
+
+.gitignore
+.travis.yml
+gulpfile.js
+index.html
+LICENSE
+package.json
+r.js
+README.md
 ````
 
 [Live demo]:<http://iondrimba.github.io/Gulp-Project-Template/>
