@@ -46,10 +46,10 @@
 │
 │── src/
 │    ├── scripts/
-│	 │   ├─── app/
-│	 │   ├─── vendors/
-│	 │   └─── require.js
-│    └─── scss/
+│	  │   ├─── app/
+│	  │   ├─── vendors/
+│	  │   └─── require.js
+│     └─── scss/
 │	    ├─── vendors/
 │	    ├─── views/
 │	    └─── app.scss
