@@ -1,10 +1,10 @@
 {
-  "name": "gulpProjectTemplate",
+  "name": "gulp-project-template",
   "version": "1.0.0",
   "description": "Gulp Project Template using Backbone + RequireJs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iondrimba/Gulp-Project-Template.git"
+    "url": "git+https://github.com/iondrimba/gulp-project-template.git"
   },
   "keywords": [
     "Gulp",

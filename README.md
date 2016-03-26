@@ -1,6 +1,6 @@
 #Gulp Project Template /  Backbone + RequireJs 
 
-[![Travis build status](https://travis-ci.org/iondrimba/gulp-project-template.svg?branch=master)](https://travis-ci.org/iondrimba/gulp-project-template)
+[![Travis build status](https://travis-ci.org/iondrimba/gulp-project-template.svg?branch=master)](https://travis-ci.org/iondrimba/gulp-project-template) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva/branch/master?svg=true)](https://ci.appveyor.com/project/iondrimba/gulp-project-template/branch/master) 
 
 ### GOAL:
 
