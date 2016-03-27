@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/iondrimba/gulp-project-template.git"
   },
+  "scripts":{
+     "test":"gulp prod"  
+  },
   "keywords": [
     "Gulp",
     "RequireJs",
@@ -14,8 +17,7 @@
     "SPA"
   ],
   "main": "gulpfile.js",
-  "scripts": {},
-  "author": "Ion D. Filho",
+  "author": "Ion D. Filho <iondrimba@gmail.com> (https://iondrimbafilho.me/)",
   "license": "MIT",
   "devDependencies": {
     "backbone": "^1.2.3",
